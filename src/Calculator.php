@@ -17,19 +17,19 @@ class Calculator {
     public function divide($a, $b) {
         return $a / $b;
     }
-    public function sqrt($a) {
-        return $a;
+    public function asqrt($a) {
+        return sqrt($a);
     }
 
-    public function rand($a, $b) {
-        return $a - $b;
+    public function arand($a, $b) {
+        return rand($a, $b)
     }
 
-    public function min($a, $b) {
-        return $a * $b;
+    public function amin($a, $b) {
+        return min($a, $b);
     }
 
-    public function max($a, $b) {
-        return $a / $b;
+    public function amax($a, $b) {
+        return max($a, $b);
     }
 }
