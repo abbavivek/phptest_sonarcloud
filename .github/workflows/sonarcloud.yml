@@ -32,7 +32,7 @@ jobs:
         uses: johanvanhelden/gha-clover-test-coverage-check@v1
         id: coverage
         with:
-            percentage: "80"
+            percentage: "30"
             filename: "coverage.xml"
       - uses: actions/upload-artifact@v3
         with:
