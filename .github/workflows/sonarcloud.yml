@@ -26,10 +26,27 @@ jobs:
 
       - name: Run PHPUnit tests and generate coverage
         run: vendor/bin/phpunit --coverage-clover=coverage.xml
+
+    # Check test coverage
+      - name: Check test coverage
+        uses: johanvanhelden/gha-clover-test-coverage-check@v1
+        id: coverage
+        with:
+            percentage: "80"
+            filename: "coverage.xml"
       - uses: actions/upload-artifact@v3
         with:
             name: coverage
             path: coverage.xml
+
+      - name: Generate the badge SVG image
+        uses: emibcn/badge-action@v1
+        id: badge
+        with:
+            label: 'Coverage'
+            status: ${{ steps.coverage.outputs.coverage }}
+            path: ./badges/test-coverage.svg
+            color: ${{ steps.coverage.outputs.coveragelines > 75 && 'green' || 'red' }}
 
     #   - name: Fix code coverage paths
     #     run: sed -i 's@'$GITHUB_WORKSPACE'@/github/workspace@g' coverage.xml      
