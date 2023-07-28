@@ -22,7 +22,7 @@ class Calculator {
     }
 
     public function arand($a, $b) {
-        return rand($a, $b)
+        return rand($a, $b);
     }
 
     public function amin($a, $b) {
