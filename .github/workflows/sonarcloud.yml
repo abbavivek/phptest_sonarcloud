@@ -39,15 +39,6 @@ jobs:
             name: coverage
             path: coverage.xml
 
-      - name: Generate the badge SVG image
-        uses: emibcn/badge-action@v1
-        id: badge
-        with:
-            label: 'Coverage'
-            status: ${{ steps.coverage.outputs.coverage }}
-            path: ./badges/test-coverage.svg
-            color: ${{ steps.coverage.outputs.coveragelines > 75 && 'green' || 'red' }}
-
       - name: List Files
         run: pwd; ls -la
 
