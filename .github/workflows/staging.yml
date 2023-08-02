@@ -1,0 +1,12 @@
+name: Staging test
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  ci:
+    name: Feature & Unit Tests
+    uses: ./.github/workflows/sonarcloud.yml
+    secrets:
+      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
