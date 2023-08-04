@@ -1,4 +1,4 @@
-name: UAT test and deploy
+name: UAT test
 on:
   release:
     types:
